@@ -8,7 +8,7 @@ public class MontanteFinal
         _simulation = simulation;
     }
 
-    public decimal CalcularMontanteFinal()
+    public decimal Calcular()
     {
         var pwrTax = TaxPow();
         return _simulation.ValorInicial * pwrTax  + _simulation.AporteMensal * ((pwrTax-1)/_simulation.TaxaJurosMensal);

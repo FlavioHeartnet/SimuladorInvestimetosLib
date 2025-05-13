@@ -9,7 +9,7 @@ public class TotalInvestido
         _simulation = simulation;
     }
 
-    public decimal CalcularValorTotalInvestido()
+    public decimal Calcular()
     {
         decimal taxaJurosMensal = _simulation.TaxaJurosAnual / 100;
         for (int i = 0; i < taxaJurosMensal; i++)
