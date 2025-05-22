@@ -4,5 +4,5 @@ using SimuladorInvestimentos.Core;
 using SimuladorInvestimentos.Core.Entity;
 
 var sim =  Simulation.CreateSimulation(Decimal.Parse("500.00") , Decimal.Parse("14"), 11, 0.7, false, 15 );
-decimal MontanteFinal = new MontanteFinal(sim).Calcular();
-Console.WriteLine("Montante: "  + MontanteFinal);
+decimal montanteFinal = new MontanteFinal(sim).Calcular();
+Console.WriteLine("Montante: "  + montanteFinal);
