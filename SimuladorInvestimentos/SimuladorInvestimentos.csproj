@@ -14,4 +14,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NMoneys" Version="7.4.0" />
+    </ItemGroup>
+
 </Project>
