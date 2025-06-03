@@ -6,19 +6,18 @@ public class TotalInvestido
 {
     private decimal _valorTotalInvestido = 0;
     private Simulation _simulation;
-    public TotalInvestido(Simulation simulation)
+    private TotalInvestido(Simulation simulation)
     {
         _simulation = simulation;
     }
 
+    public static TotalInvestido Create(Simulation simulation)
+    {
+        return new TotalInvestido(simulation);
+    }
+
     public decimal Calcular()
     {
-        decimal taxaJurosMensal = _simulation.TaxaJurosAnual / 100;
-        for (int i = 0; i < taxaJurosMensal; i++)
-        {
-            _valorTotalInvestido += _simulation.AporteMensal;
-        }
-        
-        return _valorTotalInvestido + _simulation.ValorInicial;
+        return _simulation.ValorInicial + (_simulation.PeriodoMeses * _simulation.AporteMensal);
     }
 }

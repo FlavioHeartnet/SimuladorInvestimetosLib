@@ -13,7 +13,9 @@ public class MontanteFinal
     public decimal Calcular()
     {
         var pwrTax = TaxPow();
-        return _simulation.ValorInicial * pwrTax  + _simulation.AporteMensal * ((pwrTax-1)/_simulation.TaxaJurosMensal);
+        //falta deduzir a taxa de juros
+        return (_simulation.ValorInicial * pwrTax)  + (_simulation.AporteMensal * ((pwrTax-1)/_simulation.TaxaJurosMensal));
+        
     }
 
     private decimal TaxPow()
