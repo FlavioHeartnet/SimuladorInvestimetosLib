@@ -8,14 +8,14 @@ public class Simulation
     private decimal _valorInicial;
     private decimal _taxaJurosAnual;
     private double _taxaCustodia;
-    private int _pediodoAnos;
+    private int _periodoAnos;
     private bool _isComeCotas;
 
-    public int PeriodoMeses => _pediodoAnos * 12;
+    public int PeriodoMeses => _periodoAnos < 0 ? _periodoAnos * 10 : _periodoAnos * 12;
     
     public decimal TaxaJurosMensal => _taxaJurosAnual / 12 / 100;
 
-    public int PediodoAnos => _pediodoAnos;
+    public int PediodoAnos => _periodoAnos;
 
     public decimal AporteMensal
     {
@@ -47,7 +47,7 @@ public class Simulation
         _aporteMensal = aporteMensal;
         _valorInicial = valorInicial;
         _taxaJurosAnual = taxaJurosAnual;
-        _pediodoAnos = periodoAnos;
+        _periodoAnos = periodoAnos;
         _isComeCotas = isComeCotas;
         _taxaCustodia = taxaCustodia;
         Validate();

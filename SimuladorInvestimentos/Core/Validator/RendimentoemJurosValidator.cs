@@ -10,12 +10,10 @@ public class RendimentoemJurosValidator: IValidator<RendimentoEmJuros>
         {
             throw new ArgumentException("Montante não deve ser negativo");
         }
-        
-        if (entity.GetPeriodoMeses() < 0)
+
+        if (entity.GetTotalInvestido() < 0)
         {
-            throw new ArgumentException("Periodo em Meses não deve ser negativo");
+            throw new ArgumentException("Total investido não deve ser negativo");
         }
-        
-        
     }
 }

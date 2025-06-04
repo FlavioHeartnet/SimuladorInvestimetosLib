@@ -6,11 +6,11 @@ namespace SimuladorInvestimentos.Core;
 public class RendimentoEmJuros
 {
     private decimal _montanteFinal;
-    private Simulation _simulador;
-    private RendimentoEmJuros(decimal montanteFinal, Simulation sim)
+    private decimal _totalInvestido;
+    private RendimentoEmJuros(decimal montanteFinal, decimal sim)
     {
         _montanteFinal = montanteFinal;
-        _simulador = sim;
+        _totalInvestido = sim;
         Validate();
     }
 
@@ -24,19 +24,19 @@ public class RendimentoEmJuros
         return _montanteFinal;
     }
 
-    public int GetPeriodoMeses()
+    public decimal GetTotalInvestido()
     {
-        return _simulador.PeriodoMeses;
+        return _totalInvestido;
     }
 
-    public static RendimentoEmJuros Create(decimal montanteFinal, Simulation sim)
+    public static RendimentoEmJuros Create(decimal montanteFinal, decimal sim)
     {
         return new RendimentoEmJuros(montanteFinal, sim);
     }
 
     public decimal Calcular()
     {
-        return _montanteFinal - ((_simulador.ValorInicial + _simulador.AporteMensal) * _simulador.PeriodoMeses);
+        return _montanteFinal - _totalInvestido;
     }
     
     
