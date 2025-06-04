@@ -7,7 +7,7 @@ public class ImpostoRendaRetido
         private decimal _montanteFinal;
         private double _aliquota;
 
-        public ImpostoRendaRetido(decimal montanteFinal, double aliquota)
+        private ImpostoRendaRetido(decimal montanteFinal, double aliquota)
         {
             _montanteFinal = montanteFinal;
             _aliquota = aliquota;

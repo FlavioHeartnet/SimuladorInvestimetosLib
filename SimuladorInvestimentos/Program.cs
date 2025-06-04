@@ -5,7 +5,7 @@ using SimuladorInvestimentos.Core;
 using SimuladorInvestimentos.Core.Entity;
 using SimuladorInvestimentos.Core.Utils;
 
-var sim =  Simulation.CreateSimulation(Decimal.Parse("500,05") , Decimal.Parse("11"), Decimal.Parse("500"), 0.7, false, 15 );
+var sim =  Simulation.CreateSimulation(Decimal.Parse("500,05") , Decimal.Parse("14"), Decimal.Parse("500"), 0.7, false, 15 );
 var aliquota = new AliquotaIr().Calcular(sim.PediodoAnos);
 decimal montanteFinal =  MontanteFinal.Create(sim).Calcular();
 decimal rendimentoMensal = RendimentoMensal.Create(montanteFinal, sim).Calcular();
